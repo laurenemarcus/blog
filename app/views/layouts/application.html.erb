@@ -9,9 +9,19 @@
 <body>
 
 <div class="container">
+  <nav class="navbar navbar-default" role="navigation">
+    <ul class="nav navbar-nav navbar-left">
+      <li id="nav-header"><%= link_to "Home", posts_path %></li>
+    </ul>
+    <ul class="nav navbar-nav navbar pull-right">
+      <li><%= link_to "New Post", new_post_path %></li>
+    </ul>
+  </nav>
+
   <%= flash[:alert] %>
   <%= flash[:notice] %>
   <%= yield %>
+
 </div>
 
 </body>
