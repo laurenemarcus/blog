@@ -2,12 +2,20 @@
 
 <div class="well">
 <%= form_for @post do |f| %>
-  <p><%= f.label :title %>
-  <%= f.text_field :title %></p>
-  <p><%= f.label :date %>
-  <%= f.date_field :date %></p>
-  <%= f.label :entry %>
-  <%= f.text_area :entry, size: "60x20" %></p>
-  <p><%= f.submit %></p>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="form-group">
+    <%= f.label :date %>
+    <%= f.date_field :date %>
+  </div>
+  <div class="form-group">
+    <%= f.label :entry %>
+  </div>
+  <div class="form-group">
+    <%= f.text_area :entry, size: "90x20" %>
+  </div>
+  <%= f.submit %>
 <% end %>
 </div>

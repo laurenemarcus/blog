@@ -1,7 +1,13 @@
 <%= render('layouts/errors', :object => @comment) %>
 
+<div class="well">
   <%= form_for [@post, @comment] do |f| %>
+  <div class="form-group">
     <%= f.label :reply %>
-    <%= f.text_area :reply, size: "60x10" %>
-    <p><%= f.submit %></p>
+  </div>
+    <div class="form-group">
+    <%= f.text_area :reply, size: "90x10" %>
+  </div>
+    <%= f.submit %>
   <% end %>
+</div>
