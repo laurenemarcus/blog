@@ -11,20 +11,25 @@
 
 
 
-<% if @post.comments.any? %>
-  <h4>Comments:</h4>
-  <ul>
-    <% @post.comments.each do |comment| %>
-    <li>
-      <%= comment.reply %> |
-      <%= link_to "Edit", edit_post_comment_path(@post, comment) %> |
-    
-    </li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>There are no comments.</p>
-<% end %>
 
+<h4>Comments:</h4>
 
+  <% if @post.comments.any? %>
+    <ul>
+      <% @post.comments.each do |comment| %>
+      <li>
+        <%= comment.reply %>
+        <%= link_to "Edit", edit_post_comment_path(@post, comment) %> |
+        <%= link_to "Delete", post_comment_path(@post, comment),
+                              :data => {:confirm => "Sure?",
+                              :method => "delete"} %>
+
+      </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>There are no comments.</p>
+  <% end %>
+
+<p><%= link_to "Add comment", new_post_comment_path(@post) %></p>
 <p><%= link_to "Home", posts_path %></p>

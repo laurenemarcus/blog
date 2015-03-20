@@ -20,6 +20,24 @@ class CommentsController <ApplicationController
     @comment = Comment.find(params[:id])
   end
 
+  def update
+    @comment = Comment.find(params[:id])
+    if @comment.update(comment_params)
+      flash[:notice] = "Comment successfully updated."
+      redirect_to post_path(@comment.post)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @post = @comment.post
+    @comment.destroy
+    flash[:notice] = "Comment successfully deleted."
+    redirect_to post_path(@post)
+  end
+
 private
   def comment_params
     params.require(:comment).permit(:reply)
