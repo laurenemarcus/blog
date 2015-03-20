@@ -1,11 +1,12 @@
 <%= render "layouts/errors", :object => @post %>
 
+<div class="well">
 <%= form_for @post do |f| %>
   <p><%= f.label :title %>
   <%= f.text_field :title %></p>
   <p><%= f.label :date %>
   <%= f.date_field :date %></p>
-  <p><%= f.label :entry %>
   <%= f.text_area :entry, size: "60x20" %></p>
   <p><%= f.submit %></p>
 <% end %>
+</div>
