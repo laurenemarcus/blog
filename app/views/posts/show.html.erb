@@ -15,7 +15,11 @@
   <h4>Comments:</h4>
   <ul>
     <% @post.comments.each do |comment| %>
-    <li><%= comment.reply %></li>
+    <li>
+      <%= comment.reply %> |
+      <%= link_to "Edit", edit_post_comment_path(@post, comment) %> |
+    
+    </li>
     <% end %>
   </ul>
 <% else %>

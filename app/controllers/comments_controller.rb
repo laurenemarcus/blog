@@ -15,6 +15,11 @@ class CommentsController <ApplicationController
     end
   end
 
+  def edit
+    @post = Post.find(params[:post_id])
+    @comment = Comment.find(params[:id])
+  end
+
 private
   def comment_params
     params.require(:comment).permit(:reply)
