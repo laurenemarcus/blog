@@ -2,7 +2,9 @@ INTRODUCTION
 ------------
 The Blogg app allows a user to add, edit, and delete blog posts. Users may also add, edit, and delete comments.
 
-This app demonstrates usage of Ruby on Rails, ActiveRecord, and Postgres.
+This app demonstrates usage of Ruby on Rails, ActiveRecord, Postgres, FactoryGirl, and Devise.
+
+The live version of this app can be found at: http://limitless-journey-5969.herokuapp.com/
 
 
 
