@@ -8,6 +8,7 @@ gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'bootstrap-sass', '~> 3.3.4'
+gem 'devise'
 
 
 group :development do
@@ -24,4 +25,9 @@ end
 group :test do
   gem 'shoulda-matchers'
   gem 'capybara'
+  gem 'factory_girl_rails'
+end
+
+group :production do
+  gem 'rails_12factor'
 end

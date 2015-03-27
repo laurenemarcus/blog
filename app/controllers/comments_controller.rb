@@ -21,6 +21,7 @@ class CommentsController <ApplicationController
   end
 
   def update
+    @post = Post.find(params[:post_id])
     @comment = Comment.find(params[:id])
     if @comment.update(comment_params)
       flash[:notice] = "Comment successfully updated."
