@@ -25,20 +25,11 @@ Run the following command to install all required gems:
 Run the following command to start the postgreSQL server:
 `postgres`
 
-Run the following command to access the rails console:
-`rails c`
-
 Run the following command to create the databases:
 `rake db:create`
 
 Run the following command to migrate to the databases:
 `rake db:migrate`
-
-Run the following command to copy migrations to the test database:
-`rake db:test:prepare`
-
-Run the following command to use rspec:
-`rspec`
 
 Run the following command to start the rails server:
 `rails s`
@@ -46,10 +37,17 @@ Run the following command to start the rails server:
 In your browser, go to the following page:
 `localhost:3000`
 
+Run the following command to access the rails console:
+`rails c`
+
+Run the following command to use rspec:
+`rspec`
+
+
+
 KNOWN BUGS
 ---------
-No known bugs at this time.
-
+Displays the edit and delete buttons on posts and comments for all users instead of only allowing the user who wrote them to see the links.
 
 AUTHOR
 -------
