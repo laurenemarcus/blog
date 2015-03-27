@@ -4,15 +4,17 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    @post = current_user.posts.new
   end
 
   def create
-    @post = Post.new(post_params)
+    @user = current_user
+    @post = @user.posts.new(post_params)
     if @post.save
       flash[:notice] = "Post successfully added."
       redirect_to post_path(@post)
     else
+      flash[:alert] = "There was a problem creating your post. Please try again."
       render :new
     end
   end
@@ -33,6 +35,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+
   end
 
   def destroy
