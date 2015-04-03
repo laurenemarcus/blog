@@ -1,5 +1,5 @@
 <%= render('layouts/errors', :object => @comment) %>
-<div id="comment_form">
+
 <%= form_for [@post, @comment], remote: true do |f| %>
   <div class="form-group">
     <%= f.label :reply, :class => "gray" %>
