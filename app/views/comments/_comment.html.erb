@@ -1,9 +1,11 @@
-<% if @post.comments.any? %>
-  <ul>
-    <li>
-      <%= comment.reply %>
-    </li>
-  </ul>
+<% if comment.id %>
+  <div id="comment_<%= comment.id %>">
+    <p><%= comment.reply %> | 
+       <%= link_to "Delete", post_comment_path(@post, comment),
+         remote: true,
+         :data => {:confirm => "Sure?",
+         :method => :delete} %></p>
+  </div>
 <% else %>
- <p>There are no comments.</p>
+  <p>There are no comments.</p>
 <% end %>
