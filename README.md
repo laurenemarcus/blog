@@ -2,7 +2,7 @@ INTRODUCTION
 ------------
 The Blogg app allows a user to add, edit, and delete blog posts. Users may also add, edit, and delete comments.
 
-This app demonstrates usage of Ruby on Rails, ActiveRecord, Postgres, FactoryGirl, and Devise.
+This app demonstrates usage of Ruby on Rails, AJAX, Twilio, ActiveRecord, Postgres, FactoryGirl, and Devise.
 
 The live version of this app can be found at: http://limitless-journey-5969.herokuapp.com/
 
@@ -48,6 +48,10 @@ Run the following command to use rspec:
 KNOWN BUGS
 ---------
 Displays the edit and delete buttons on posts and comments for all users instead of only allowing the user who wrote them to see the links.
+
+Once an edit is submitted for a comment, it doesn't redirect back to the blog post page.
+
+Doesn't send text messages at this time.
 
 AUTHOR
 -------
