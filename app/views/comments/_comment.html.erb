@@ -1,0 +1,13 @@
+<% if @post.comments.any? %>
+  <ul>
+    <li>
+      <%= comment.reply %>
+      <%= link_to "Edit", edit_post_comment_path(@post, comment) %> |
+      <%= link_to "Delete", post_comment_path(@post, comment),
+      :data => {:confirm => "Sure?",
+        :method => "delete"} %>
+    </li>
+  </ul>
+<% else %>
+ <p>There are no comments.</p>
+<% end %>
