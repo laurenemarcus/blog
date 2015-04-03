@@ -9,8 +9,10 @@ class CommentsController <ApplicationController
     @post = Post.find(params[:post_id])
     @comment = @post.comments.new(comment_params)
     if @comment.save
-      flash[:notice] = "Comment successfully added."
-      redirect_to post_path(@comment.post)
+      respond_to do |format|
+        format.html { redirect_to post_path(@comment.post) }
+        format.js
+      end
     else
       render :new
     end
@@ -40,7 +42,6 @@ class CommentsController <ApplicationController
       format.html {post_comment_path(@post, comment)}
       format.js
     end
-    flash[:notice] = "Comment successfully deleted."
   end
 
 private

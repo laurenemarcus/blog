@@ -1,11 +1,10 @@
 <% if comment.id %>
-  <div id="comment_<%= comment.id %>">
-    <p><%= comment.reply %> | 
-       <%= link_to "Delete", post_comment_path(@post, comment),
-         remote: true,
-         :data => {:confirm => "Sure?",
-         :method => :delete} %></p>
-  </div>
-<% else %>
-  <p>There are no comments.</p>
+<div class="box", id="comment_<%= comment.id %>">
+  <p><%= comment.reply %></p>
+  <p class="right-align"><%= link_to "Edit", edit_post_comment_path(@post, comment) %> |
+    <%= link_to "Delete", post_comment_path(@post, comment),
+    remote: true,
+    :data => {:confirm => "Sure?",
+      :method => :delete} %></p>
+    </div>
 <% end %>

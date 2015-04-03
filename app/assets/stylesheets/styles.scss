@@ -1,3 +1,19 @@
 .right-align {
   text-align: right;
 }
+
+.box {
+  border-style: solid;
+  border-width: 1px;
+  border-color: lightgray;
+  margin: 10px 0px 10px 0px;
+  padding: 10px;
+}
+
+.gray {
+  color: #F5F5F5;
+}
+
+#comments {
+  margin: 30px 0px 10px 0px;  
+}

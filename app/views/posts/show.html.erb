@@ -2,8 +2,8 @@
   <h4><%= @post.title %></h4>
   <p><%= @post.date %></p>
   <p>
-    <%= link_to "Edit Post", edit_post_path(@post) %> |
-    <%= link_to "Delete Post", post_path(@post),
+    <%= link_to "Edit", edit_post_path(@post) %> |
+    <%= link_to "Delete", post_path(@post),
                               :data => {:confirm => "Sure?",
                               :method => "delete"} %>
   </p>
@@ -13,14 +13,14 @@
 
 
 <div class="well">
-<h3>Comments:</h3>
-
 
 <%= render template: 'comments/new' %>
+
+<h3 id="comments">Comments:</h3>
 
 <div id="all_comments">
   <%= render @comments %>
 </div>
 
-<p><%= link_to "Add comment", new_post_comment_path(@post) %></p>
+
 </div>
